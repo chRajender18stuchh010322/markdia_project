@@ -1,0 +1,39 @@
+{% extends 'private/base.html'%} {% block content %} {% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+        color: #030303;
+      }
+
+      td,
+      th {
+        border: 1px solid #030303;
+        text-align: left;
+        padding: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <br />
+    <h2 class="text-danger">Subscribers</h2>
+    <br />
+    <table>
+      <tr>
+        <th>ID</th>
+        <th>EMAIL</th>
+      </tr>
+      {% for S in form %}
+      <tr>
+        <td>{{S.id}}</td>
+        <td>{{S.email}}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </body>
+</html>
+{% endblock %}

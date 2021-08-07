@@ -1,0 +1,45 @@
+{% extends 'private/base.html'%} {% block content %} {% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+        color: #030303;
+      }
+
+      td,
+      th {
+        border: 1px solid #030303;
+        text-align: left;
+        padding: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <br />
+    <h2 class="text-danger">Subscribers Query</h2>
+    <br />
+    <table>
+      <tr>
+        <th>NAME</th>
+        <th>EMAIL</th>
+        <th>PHONE</th>
+        <th>SUBJECT</th>
+        <th>MESSAGE</th>
+      </tr>
+      {% for c in cat %}
+      <tr>
+        <td>{{c.name}}</td>
+        <td>{{c.email}}</td>
+        <td>{{c.phone}}</td>
+        <td>{{c.subject}}</td>
+        <td>{{c.message}}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </body>
+</html>
+{% endblock %}

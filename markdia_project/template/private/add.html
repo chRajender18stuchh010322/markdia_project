@@ -1,0 +1,37 @@
+{% extends 'private/base.html'%} {% block content %} {% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+        color: #030303;
+      }
+
+      td,
+      th {
+        border: 1px solid #030303;
+        text-align: left;
+        padding: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <br />
+    <h2>Add Banner</h2>
+    <table>
+      {% load crispy_forms_tags %}
+      <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <tr>
+          {{form|crispy}}
+          <td><button class="btn btn-primary">ADD BANNER</button></td>
+        </tr>
+      </form>
+    </table>
+  </body>
+</html>
+{% endblock %}
